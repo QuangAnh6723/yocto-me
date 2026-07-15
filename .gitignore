@@ -1,0 +1,7 @@
+.tmp/bitbake-builds
+.tmp/bitbake
+
+src/builds/*/build/
+src/builds/*/config/
+src/builds/*/layers/
+
