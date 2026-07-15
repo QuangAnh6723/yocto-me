@@ -1,0 +1,16 @@
+{
+  "name": "Yocto BitBake Development",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "yocto-builder",
+  
+  "workspaceFolder": "/home/yocto/workspace",
+  
+  "remoteUser": "yocto",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yocto-project.yocto-bitbake"
+      ]
+    }
+  }
+}

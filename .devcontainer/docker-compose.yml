@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  yocto-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: host
+      args:
+        USER_ID: 1000
+        GROUP_ID: 1000
+    image: yocto-build-env:v1
+    # container_name: yocto_container
+    stdin_open: true
+    tty: true
+    ports:
+      - "8000:8000" 
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    volumes:
+      - ..:/home/yocto/workspace
+
+      - ~/.gitconfig:/home/yocto/.gitconfig:ro
+      - ~/.ssh:/home/yocto/.ssh:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      
+    environment:
+      - LANG=en_US.UTF-8
+      - LC_ALL=en_US.UTF-8
