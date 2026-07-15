@@ -1,0 +1,10 @@
+/home/yocto/workspace/src/builds/build-qemuarm64
+
+. /home/yocto/workspace/src/builds/build-qemuarm64/build/init-build-env
+
+
+bitbake core-image-minimal
+
+runqemu core-image-minimal nographic slirp snapshot
+
+dtc -I dtb -O dts qemu_virt.dtb -o qemu_virt.dts

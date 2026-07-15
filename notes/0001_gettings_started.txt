@@ -1,0 +1,1 @@
+clone bitbake to .tmp

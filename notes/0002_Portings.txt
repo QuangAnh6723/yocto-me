@@ -1,0 +1,22 @@
+root@qemuarm64:~# dmesg | grep ttyAMA
+[    0.000000] Kernel command line: root=/dev/vda rw  mem=256M ip=dhcp console=ttyAMA0 console=hvc0 swiotlb=0
+[    0.242104] 9000000.pl011: ttyAMA0 at MMIO 0x9000000 (irq = 13, base_baud = 0) is a PL011 rev1
+[    0.245352] printk: console [ttyAMA0] enabled
+[    0.254608] 9040000.pl011: ttyAMA1 at MMIO 0x9040000 (irq = 14, base_baud = 0) is a PL011 rev1
+[    3.840916] systemd[1]: Expecting device /dev/ttyAMA0...
+
+cd src/layers
+bitbake-layers create-layer meta-anhle
+bitbake-layers add-layer meta-anhle
+
+bitbake-layers show-layers
+
+build rieeng recipes
+bitbake my-uart-app
+
+runqemu core-image-minimal nographic slirp snapshot qemuparams="-serial tcp:127.0.0.1:5555,server,nowait"
+
+runqemu core-image-minimal nographic slirp snapshot qemuparams="-serial mon:stdio -serial tcp:127.0.0.1:5555,server,nowait"
+
+find tmp/deploy/ -name "*my-uart-app*"
+ls -l /usr/bin/my-uart-app
