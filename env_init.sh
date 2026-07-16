@@ -1,16 +1,4 @@
-# cd .tmp
-# ./bitbake/bin/bitbake-setup init
-
-# BUILD_DIR="src/builds/build-$1"
-
-# if [ -d "$BUILD_DIR" ]; then
-#     echo "[INFO] Directory '$BUILD_DIR' already exists. Loading existing configuration..."
-# else
-#     echo "[INFO] Directory '$BUILD_DIR' does not exist. Creating a new build directory..."
-#     mkdir -p $BUILD_DIR
-# fi
-
-# source .tmp/poky/oe-init-build-env "$BUILD_DIR"
+#!/bin/bash
 
 # 1. Define the base directory for builds
 BASE_DIR="src/builds"
