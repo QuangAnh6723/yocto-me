@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     chrpath \
     cpio \
+    daemon \
     debianutils \
     diffstat \
     file \
@@ -16,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     libacl1 \
     libcrypt-dev \
     locales \
+    lz4 \
     python3 \
     python3-git \
     python3-jinja2 \
@@ -24,14 +26,13 @@ RUN apt-get update && apt-get install -y \
     python3-subunit \
     python3-websockets \
     socat \
+    sudo \
     texinfo \
     unzip \
+    vim \
     wget \
     xz-utils \
     zstd \
-    sudo \
-    vim \
-    daemon \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade websockets
@@ -40,7 +41,7 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-# install for Toast yocto
+# Install for Toaster yocto
 RUN pip3 install --no-cache-dir "Django>=4.2,<4.3" "beautifulsoup4>=4.4.0" pytz "django-log-viewer==1.1.7" click GitPython
 
 ARG USER_ID=1000
