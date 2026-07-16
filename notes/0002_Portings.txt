@@ -9,6 +9,9 @@ cd src/layers
 bitbake-layers create-layer meta-anhle
 bitbake-layers add-layer meta-anhle
 
+bitbake-layers create-layer meta-bbb-bsp
+bitbake-layers add-layer meta-bbb-bsp
+
 bitbake-layers show-layers
 
 build rieeng recipes

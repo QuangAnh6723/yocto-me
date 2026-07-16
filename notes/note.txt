@@ -8,3 +8,12 @@ bitbake core-image-minimal
 runqemu core-image-minimal nographic slirp snapshot
 
 dtc -I dtb -O dts qemu_virt.dtb -o qemu_virt.dts
+
+/home/yocto/workspace/src/builds/build-beaglebone
+. /home/yocto/workspace/src/builds/build-beaglebone/build/init-build-env
+
+/home/yocto/workspace/src/builds/build-beaglebone/build
+
+/home/yocto/workspace/src/builds/build-bbb-bsp
+
+bitbake core-image-minimal
