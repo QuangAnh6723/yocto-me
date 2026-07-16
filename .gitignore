@@ -1,7 +1,17 @@
 .tmp/bitbake-builds
 .tmp/bitbake
+.tmp/poky
 
 src/builds/*/build/
 src/builds/*/config/
 src/builds/*/layers/
+
+src/builds/*/cache
+src/builds/*/downloads
+src/builds/*/sstate-cache
+src/builds/*/tmp
+src/builds/*/*.log
+src/builds/*/*.sock
+src/builds/*/*.lock
+
 
